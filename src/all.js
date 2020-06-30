@@ -1,3 +1,6 @@
-export default function all() {
-	return [...document.querySelectorAll('*')];
+export default function all(includeOtherEventTargets = false) {
+	return [ 
+		...(includeOtherEventTargets ? [window, document] : []),
+		...document.querySelectorAll('*')
+	];
 };

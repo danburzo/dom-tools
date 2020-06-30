@@ -4,6 +4,6 @@ export default function getEvents(el) {
 	}
 	return Object.values(getEventListeners(el)).map(it => ({
 		...it,
-		element: el
+		target: el
 	}));
 }
