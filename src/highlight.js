@@ -1,6 +1,8 @@
+import all from './all.js';
+
 let initialized = false;
 
-function highlight(predicate, label = () => '') {
+export default function highlight(predicate, label = () => '') {
 	if (!initialized) {
 
 		let s = document.createElement('style');
@@ -27,7 +29,7 @@ function highlight(predicate, label = () => '') {
 	}
 
 	const fn = () => {
-		[...document.querySelectorAll('*')].forEach(el => {
+		all().forEach(el => {
 			if (predicate(el)) {
 				if (!el.classList.contains('dt-highlight')) {
 					el.classList.add('dt-highlight');
@@ -50,5 +52,3 @@ function highlight(predicate, label = () => '') {
 	document.addEventListener('dt-change', fn);
 	fn();
 }
-
-export { highlight };
