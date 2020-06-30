@@ -8,23 +8,12 @@ function highlight(predicate, label = () => '') {
 			.dt-highlight {
 				outline: 2px solid red;
 			}
-
-			.dt-highlight:after {
-				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: rgba(255, 0, 0, 0.1);
-				content: ' ';
-				pointer-events: none;
-			}
 		`;
 
 		document.head.appendChild(s);
 
 		let obs = new MutationObserver(() => {
-			document.emitEvent('dt-change');
+			document.dispatchEvent('dt-change');
 		});
 
 		obs.observe(document.documentElement, {
