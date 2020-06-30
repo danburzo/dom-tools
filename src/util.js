@@ -7,13 +7,14 @@ function highlight(predicate, label = () => '') {
 		s.textContent = `
 			.dt-highlight {
 				outline: 2px solid red;
+				box-shadow: inset 0px 0px 0 9999px rgba(255, 0, 0, 0.1);
 			}
 		`;
 
 		document.head.appendChild(s);
 
 		let obs = new MutationObserver(() => {
-			document.dispatchEvent('dt-change');
+			document.dispatchEvent('dt-change', {});
 		});
 
 		obs.observe(document.documentElement, {
