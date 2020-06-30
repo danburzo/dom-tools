@@ -1,2 +1,3 @@
-# zexplain
-Given two DOM elements, explain how they stack
+# DOM tools
+
+DOM helper functions to debug web pages.
