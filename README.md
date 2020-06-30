@@ -19,10 +19,10 @@ dt.highlight(el => el.tagName === 'LI');
 ## API
 
 * __stackingCtx__(_element_)
-* __highlight__(_predicate_, _label_) — highlight all DOM elements matching the `predicate` function;
-* __all__() — returns an array of all DOM elements;
 * __getEvents__(_element_) — (Chrome only) returns an array of events for a DOM element;
-
+* __poking__(_element_) — returns whether the element pokes outside the bounds of the window, causing a horizontal scrollbar to appear;
+* __highlight__(_predicate_, _label_) — highlight all DOM elements matching the `predicate` function;
+* __all__() — returns an array of all DOM elements
 ## Recipes
 
 ### Get all DOM events from the page
