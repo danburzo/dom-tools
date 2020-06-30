@@ -16,7 +16,7 @@ export default function highlight(predicate, label = () => '') {
 		document.head.appendChild(s);
 
 		let obs = new MutationObserver(() => {
-			document.dispatchEvent('dt-change', {});
+			document.dispatchEvent(new CustomEvent('dt-change', {}));
 		});
 
 		obs.observe(document.documentElement, {

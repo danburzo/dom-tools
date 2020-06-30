@@ -32,3 +32,14 @@ import { all, getEvents } from 'https://danburzo.github.io/dom-tools/api.js';
 
 all().map(getEvents).flat();
 ```
+
+### Highlight all stacking contexts
+
+```js
+import { highlight, stackingCtx } from 'https://danburzo.github.io/dom-tools/api.js';
+
+highlight(stackingCtx, el => {
+	let ctx = stackingCtx(el); 
+	return `reason: ${ctx[0]}; z-index: ${ctx[1]}`;
+});
+```
